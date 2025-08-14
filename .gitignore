@@ -1,9 +1,7 @@
 # OSX
-#
 .DS_Store
 
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -22,8 +20,20 @@ DerivedData
 *.xcuserstate
 **/.xcode.env.local
 
+# React Native
+.expo/
+.expo-shared/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.test
+
+# OS generated files
+Thumbs.db
+
 # Android/IntelliJ
-#
 build/
 .idea
 .gradle
@@ -36,13 +46,11 @@ local.properties
 .kotlin/
 
 # node.js
-#
 node_modules/
 npm-debug.log
 yarn-error.log
 
 # fastlane
-#
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
@@ -66,6 +74,20 @@ yarn-error.log
 # testing
 /coverage
 
+# Logs
+logs
+*.log
+lerna-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
 # Yarn
 .yarn/*
 !.yarn/patches
@@ -73,3 +95,20 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# VS Code
+.vscode/
+
+# WebStorm
+.idea/
+
+# AI Development Tools
+.claude/
+CLAUDE.md
+GEMINI.md
+.cursor/
+.copilot/
+.codeium/
+*.ai-tmp
+*.copilot-tmp
+.cursor-tutor/
