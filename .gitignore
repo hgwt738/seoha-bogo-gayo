@@ -30,6 +30,14 @@ DerivedData
 .env.production
 .env.test
 
+# Google Cloud Service Account Keys
+service-account-key.json
+*-service-account-key.json
+backend/service-account-key.json
+backend/*.json
+!backend/package.json
+!backend/package-lock.json
+
 # OS generated files
 Thumbs.db
 
