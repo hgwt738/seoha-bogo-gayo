@@ -16,7 +16,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 const { width: screenWidth } = Dimensions.get('window');
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  useColorScheme() === 'dark';
   return (
     <SafeAreaProvider>
       <StatusBar barStyle="dark-content" backgroundColor="#f5f5f5" />
