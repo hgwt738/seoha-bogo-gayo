@@ -28,7 +28,9 @@ function App() {
 function AppContent() {
   const API_URL = __DEV__ 
     ? 'http://10.0.2.2:3000/api/random-image'
-    : 'https://YOUR-REGION-YOUR-PROJECT.cloudfunctions.net/getRandomImage';
+    : 'https://asia-northeast3-seoha-469403.cloudfunctions.net/getRandomImage';
+  
+  const APP_USER_AGENT = 'seohabogogayo/1.0';
   
   const [imageUrl, setImageUrl] = useState<string>('');
   const [imageName, setImageName] = useState<string>('');
@@ -43,7 +45,11 @@ function AppContent() {
     setLikeCooldown(false);
     
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(API_URL, {
+        headers: {
+          'User-Agent': APP_USER_AGENT,
+        },
+      });
       const data = await response.json();
       
       if (data.success) {
@@ -85,12 +91,13 @@ function AppContent() {
     try {
       const likeApiUrl = __DEV__ 
         ? `http://10.0.2.2:3000/api/like/${encodeURIComponent(imageName)}`
-        : `https://YOUR-CLOUD-FUNCTION-URL/api/like/${encodeURIComponent(imageName)}`;
+        : `https://asia-northeast3-seoha-469403.cloudfunctions.net/likeImage/${encodeURIComponent(imageName)}`;
       
       const response = await fetch(likeApiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'User-Agent': APP_USER_AGENT,
         },
         body: JSON.stringify({ increment: true })
       });
